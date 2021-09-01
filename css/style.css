@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Permanent+Marker&display=swap');
+
+.main-section {
+    background-image: url("../assets/fondo.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+}
+.form-container {
+    background: #DDE4DD;
+    border-radius: 15px;
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    padding: 2rem;
+    width: 35%;
+    height: 40%;
+    margin-top: 20vh;
+}
+#form {
+    margin-bottom: 1rem;
+}
+.form-title {
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 400;
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #C08237;
+}
+button {
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    color: #DDE4DD;
+    background-color: #3E7021;
+    border: 1px solid #3E7021;
+}
+
+#input {
+    width: 79%;
+    font-family: 'Lato', sans-serif;
+}
+
+.submit-btn {
+    width: 20%;
+}
+
+#limpiar-btn {
+    width: 100%;
+    height: 2rem;
+}
+.item-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    color: #3E7021;
+    text-align: center;
+}
