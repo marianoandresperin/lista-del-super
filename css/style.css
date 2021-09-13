@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
 
 .main-section {
     background-image: url("../assets/fondo.jpg");
@@ -22,7 +22,7 @@
     margin-bottom: 1rem;
 }
 .form-title {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     font-size: 3.2rem;
     text-align: center;
@@ -31,15 +31,25 @@
 }
 button {
     border-radius: 5px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
     color: #DDE4DD;
     background-color: #3E7021;
     border: 1px solid #3E7021;
 }
 
-#input {
-    width: 79%;
-    font-family: 'Lato', sans-serif;
+#articulo {
+    width: 60%;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+}
+
+#seccion {
+    width: 18%;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-weight: 300;
 }
 
 .submit-btn {
@@ -50,9 +60,31 @@ button {
     width: 100%;
     height: 2rem;
 }
+.bar-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    text-decoration: underline;
+    color: #C08237;
+}
+
+.bar-section {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    text-decoration: underline;
+    color: #C08237;
+}
 .item-title {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
     color: #3E7021;
-    text-align: center;
+}
+
+.item-section {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #3E7021;
 }

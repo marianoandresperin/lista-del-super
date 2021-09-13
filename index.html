@@ -14,19 +14,20 @@
     <section class="main-section container-fluid d-flex justify-content-center">
         <!-- ingreso de articulos -->
         <div class="form-container container row">
-            <div class="form">
+            <div class="form col">
                 <h3 class="form-title">Lista de Supermercado</h3>
                 <form class="row justify-content-between px-3" id="form">
-                    <input type="text" id="input" placeholder="p.ej. leche">
+                    <input type="text" id="articulo" placeholder="p.ej. leche">
+                    <input type="text" id="seccion" placeholder="seccion">
                     <button type="submit" class="submit-btn">
                         Agregar
                     </button>
                 </form>
             </div>
             <!-- lista de articulos -->
-            <div class="row col container-articulos justify-content-center">
+            <div class="column col container-articulos justify-content-center">
                 <div id="supermercado-list" class="column"></div>
-                <div class="item-container-btn row col-12  px-3">
+                <div class="item-container-btn">
                     <button type="clear" id="limpiar-btn">
                         Limpiar artículos
                     </button>
