@@ -16,9 +16,14 @@
         <div class="form-container container row">
             <div class="form col">
                 <h3 class="form-title">Lista de Supermercado</h3>
+                <div class="row justify-content-center px-3">
+                    <p id="success">El artículo ha sido ingresado correctamente.</p>
+                    <p id="errorArticulo">El artículo que ingresaste es inválido.</p>
+                    <p id="errorSeccion">La sección que ingresaste es inválida.</p>
+                </div>
                 <form class="row justify-content-between px-3" id="form">
                     <input type="text" id="articulo" placeholder="p.ej. leche">
-                    <input type="text" id="seccion" placeholder="seccion">
+                    <input type="text" id="seccion" placeholder="sección">
                     <button type="submit" class="submit-btn">
                         Agregar
                     </button>

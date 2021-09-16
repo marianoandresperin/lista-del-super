@@ -1,7 +1,7 @@
 class Articulo {
     constructor(nombre, seccion) {
-        this.nombre = nombre.toUpperCase();
-        this.seccion = seccion.toUpperCase();
+        this.nombre = nombre.toLowerCase();
+        this.seccion = seccion.toLowerCase();
     }
 }
 
@@ -36,14 +36,34 @@ function impresionArticulos(){
                                             <h5 class="item-section">${articulos[i].seccion}</h5>
                                         </div>`);
     }
+    $('#supermercado-list').slideDown("2000");
 }
 
 // AGREGA ARTICULOS AL ARRAY A TRAVES DEL INPUT DEL FORM
 function agregarArticulo(evt) {
     evt.preventDefault();
     let obtenerDato = $(evt.target).children();
-    articulos.push(new Articulo (`${obtenerDato[0].value}`,`${obtenerDato[1].value}`));
+    if (obtenerDato[0].value === "") {
+        $("#errorArticulo").slideDown("fast", function() {
+            $("#errorArticulo").delay(1000)
+            $("#errorArticulo").slideUp("fast");
+        });
+        $("#articulo").focus();
+    }else if (obtenerDato[1].value === "") {
+        $("#errorSeccion").slideDown("fast", function() {
+            $("#errorSeccion").delay(1000)
+            $("#errorSeccion").slideUp("fast");
+        });
+        $("#seccion").focus();
+    }else {
     guardar("arrayArticulosJSON", JSON.stringify(articulos));
+    articulos.push(new Articulo (`${obtenerDato[0].value}`,`${obtenerDato[1].value}`));
+    $("#success").slideDown("fast", function() {
+        $("#success").delay(1000)
+        $("#success").slideUp("fast");
+    });
+    clearInputs();
+    }
     // LO UTILIZO PARA MIRAR COMO EL EVENTO ACTUALIZA EL ARRAY
     console.table(articulos)
     // LIMPIO EL INPUT Y LO VUELVO A PONER EN FOCUS PARA SEGUIR LISTANDO ARTICULOS
@@ -52,9 +72,12 @@ function agregarArticulo(evt) {
         $("#seccion").val("");
         $("#articulo").focus();
     }
-    clearInputs();
     // INVOCO LA FUNCION QUE AGREGA LOS ARTICULOS AL HTML
     impresionArticulos();
+    $(".submit-btn").fadeOut("fast", function() {
+        $(".submit-btn").fadeIn("fast");
+    });
+    
 }
 
 // ELIMINA TODOS LOS ARTICULOS DE LA LISTA Y DEL ARRAY
@@ -64,4 +87,8 @@ function limpiarArticulos() {
     impresionArticulos();
     // LO UTILIZO PARA MIRAR COMO EL EVENTO ACTUALIZA EL ARRAY
     console.table(articulos);
+    $("#limpiar-btn").fadeOut("fast", function() {
+        $("#limpiar-btn").fadeIn("fast");
+    });
 }
+

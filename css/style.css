@@ -81,10 +81,36 @@ button {
     font-size: 1.3rem;
     color: #3E7021;
 }
-
+.item-title::first-letter {
+    text-transform: uppercase;
+}
 .item-section {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     font-size: 1.3rem;
     color: #3E7021;
+}
+.item-section::first-letter {
+    text-transform: uppercase;
+}
+#success {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: #3E7021;
+}
+#errorArticulo {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: #8f1212;
+}
+#errorSeccion {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: #8f1212;
 }
