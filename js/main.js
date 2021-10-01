@@ -1,7 +1,7 @@
 class Articulo {
-    constructor(nombre, seccion) {
+    constructor(nombre, sector) {
         this.nombre = nombre.toLowerCase();
-        this.seccion = seccion.toLowerCase();
+        this.sector = sector.toLowerCase();
     }
 }
 
@@ -11,7 +11,7 @@ const recuperar = JSON.parse(localStorage.getItem("arrayArticulosJSON"));
 
 // AGREGO UN IF PORQUE AL PRINCIPIO NO HAY NADA CARGADO
 if (recuperar) for (let objeto of recuperar){
-    articulos.push(new Articulo (`${objeto.nombre}`, `${objeto.seccion}`));
+    articulos.push(new Articulo (`${objeto.nombre}`, `${objeto.sector}`));
 }
 
 impresionArticulos();
@@ -25,15 +25,15 @@ $('#limpiar-btn').on("click", limpiarArticulos);
 // FUNCION PARA "ACTUALIZAR" LOS ARTICULOS DE LA LISTA
 function impresionArticulos(){
     $('#supermercado-list').empty();
-    // ENCABEZADO DE LOS ARTICULOS Y SECCION
+    // ENCABEZADO DE LOS ARTICULOS Y SECTOR
     $('#supermercado-list').append(`<div class="row justify-content-between px-3">
                                         <h5 class="bar-title">Artículo</h5>
-                                        <h5 class="bar-section">Sección</h5>
+                                        <h5 class="bar-section">Sector</h5>
                                     </div>`);
     for (let i = 0; i < articulos.length; i++){
         $('#supermercado-list').append(`<div class="row justify-content-between px-3">
                                             <h5 class="item-title">${articulos[i].nombre}</h5>
-                                            <h5 class="item-section">${articulos[i].seccion}</h5>
+                                            <h5 class="item-section">${articulos[i].sector}</h5>
                                         </div>`);
     }
     $('#supermercado-list').slideDown("2000");
@@ -50,14 +50,14 @@ function agregarArticulo(evt) {
         });
         $("#articulo").focus();
     }else if (obtenerDato[1].value === "") {
-        $("#errorSeccion").slideDown("fast", function() {
-            $("#errorSeccion").delay(1000)
-            $("#errorSeccion").slideUp("fast");
+        $("#errorSector").slideDown("fast", function() {
+            $("#errorSector").delay(1000)
+            $("#errorSector").slideUp("fast");
         });
-        $("#seccion").focus();
+        $("#sector").focus();
     }else {
-    guardar("arrayArticulosJSON", JSON.stringify(articulos));
     articulos.push(new Articulo (`${obtenerDato[0].value}`,`${obtenerDato[1].value}`));
+    guardar("arrayArticulosJSON", JSON.stringify(articulos));
     $("#success").slideDown("fast", function() {
         $("#success").delay(1000)
         $("#success").slideUp("fast");
@@ -69,7 +69,7 @@ function agregarArticulo(evt) {
     // LIMPIO EL INPUT Y LO VUELVO A PONER EN FOCUS PARA SEGUIR LISTANDO ARTICULOS
     function clearInputs() {
         $("#articulo").val("");
-        $("#seccion").val("");
+        $("#sector").val("");
         $("#articulo").focus();
     }
     // INVOCO LA FUNCION QUE AGREGA LOS ARTICULOS AL HTML

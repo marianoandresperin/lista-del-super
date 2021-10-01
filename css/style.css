@@ -45,7 +45,7 @@ button {
     font-weight: 300;
 }
 
-#seccion {
+#sector {
     width: 18%;
     font-family: 'Ubuntu', sans-serif;
     font-style: italic;
@@ -107,7 +107,7 @@ button {
     font-size: 1.3rem;
     color: #8f1212;
 }
-#errorSeccion {
+#errorSector {
     display: none;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
