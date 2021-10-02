@@ -14,6 +14,21 @@ if (recuperar) for (let objeto of recuperar){
     articulos.push(new Articulo (`${objeto.nombre}`, `${objeto.sector}`));
 }
 
+// ORDENA ALFABÉTICAMENTE POR SECTOR
+function ordenarSector() {
+    articulos.sort(function(a, b) {
+        let nameA = a.sector;
+        let nameB = b.sector;
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    })
+}
+
 impresionArticulos();
 
 const guardar = (k, v) => {localStorage.setItem(k, v)};
@@ -57,6 +72,7 @@ function agregarArticulo(evt) {
         $("#sector").focus();
     }else {
     articulos.push(new Articulo (`${obtenerDato[0].value}`,`${obtenerDato[1].value}`));
+    ordenarSector();
     guardar("arrayArticulosJSON", JSON.stringify(articulos));
     $("#success").slideDown("fast", function() {
         $("#success").delay(1000)
